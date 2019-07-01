@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <!-- 导入boot文件，顺序固定	 -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/comm.css"/>
+    <style>
+        body{
+            padding:0;margin:0;
+            background:#9b9e9d
+        }
+        .container-fluid>div{
+            background: url(../imgs/center2.jpg) no-repeat;
+            background-size:cover ;
+        }
+        img{border:2px solid #94C58B;border-radius: 5px;transition: 1s;}
+        img:hover{
+            transform: scale(1.2) rotate(40deg);
+            box-shadow: 1px 1px 20px #f8f9fa ;
+        }
+        #middle_img{
+            transition: 1s;
+            border-radius: 50%;
+            animation:change 20s linear infinite;
+        }
+        @keyframes change  {
+            0%{transform: rotate(0deg)}
+            100%{transform: rotate(360deg)}
+        }
+    </style>
+</head>
+<body>
+<header>
+    <iframe src="header.html" frameborder="0" class="my_header" scrolling="no"></iframe>
+</header>
+<div class="container-fluid p-3 ">
+    <div class="border p-5 bg-secondary" id="photo">
+        <div class="row">
+            <div class="col-md-2 col-sm-4"><img src="../imgs/11.jpg" alt="" class="w-75"/></div>
+            <div class="col-md-2 col-sm-4 offset-8"><img src="../imgs/index-r-2.jpg" alt="" class="w-75 float-right"/></div>
+        </div>
+        <div class="row pb-4">
+            <div class="col-md-2 col-sm-4 offset-2"><img src="../imgs/12.jpg" alt="" class="w-75"/></div>
+            <div class="col-md-2 col-sm-4 offset-4"><img src="../imgs/index-m-3.jpg" alt="" class="w-75 float-right"/></div>
+        </div>
+        <div class="row justify-content-center" >
+            <img src="../imgs/thumbnail.png" alt="" class="" id="middle_img" style="opacity: 0"/>
+        </div>
+        <div class="row pt-4">
+            <div class="col-md-2 col-sm-4 offset-2"><img src="../imgs/13.jpg" alt="" class="w-75"/></div>
+            <div class="col-md-2 col-sm-4 offset-4"><img src="../imgs/index-m-4.jpg" alt="" class="w-75 float-right"/></div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-md-2 col-sm-4 "><img src="../imgs/index-m-2.jpg" alt="" class="w-75"/></div>
+            <div class="col-md-2 col-sm-4 offset-8"><img src="../imgs/index-m-1.jpg" alt="" class="w-75 float-right"/></div>
+        </div>
+    </div>
+</div>
+<script>
+    var imgs=document.querySelectorAll(".row div:not(only-child) img")
+    //console.log(imgs)
+    var mdImg=document.getElementById("middle_img");
+    //console.log(mdImg);
+    for(var img of imgs){
+        //console.log(img)
+        img.onclick=function(e){
+            var img=this;
+            e.stopPropagation();
+            mdImg.style.opacity=1;
+            mdImg.src=img.src;
+        }
+    }
+    var div=document.getElementById("photo");
+    div.onclick=function(){mdImg.style.opacity=0;}
+</script>
+</body>
+</html>

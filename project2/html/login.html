@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/comm.css"/>
+</head>
+<body>
+<header>
+    <iframe src="header.html" frameborder="0" class="my_header" scrolling="no"></iframe>
+</header>
+   <div class="container">
+        <form class="bg-white border p-5">
+            <table>
+                <tr >
+                    <td class="text-success" colspan="2"><h3>欢迎登录岁草网</h3></td>
+                </tr>
+                <tr >
+                    <td >用户名：</td>
+                    <td><input type="text" class="form-control" placeholder="请输入用户名"/>
+                    <span style="font-size: 12px"></span>
+                    </td>
+                </tr>
+                <tr >
+                    <td>密&nbsp;码：</td>
+                    <td><input type="password" class="form-control" placeholder="请输入密码"/>
+                    <span style="font-size: 12px"></span>
+                    </td>
+                </tr>
+                <tr >
+                    <td></td>
+                    <td >
+                        <button class="btn btn-primary">登录</button>
+                        <a href="reg.html" class="btn btn-secondary">注册</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+   </div>
+<script>
+    var txtName=document.querySelector("input[type=text]");
+    var txtPwd=document.querySelector("input[type=password]");
+    //console.log(txtPwd)
+    txtName.onfocus=function(){
+        var td=txtName.nextElementSibling;
+        td.innerHTML="6-8位，可包含数字、字母、下划线";
+        td.className="";
+    }
+    txtPwd.onfocus=function(){
+        var td=txtPwd.nextElementSibling;
+        td.innerHTML="8-12位，可包含数字、字母";
+        td.className="";
+    }
+    function test(reg){
+        var input=this;
+        var td=input.nextElementSibling;
+        if(reg.test(input.value)==true){
+            td.className="ok";
+            td.innerHTML=""
+        }else{
+            td.className="err";
+            td.innerHTML="输入不符合格式，请重新输入"
+        }
+    }
+    txtName.onblur=function(){
+        var reg=/^\w{6,8}$/;
+       test.call(this,reg);
+    }
+    txtPwd.onblur=function(){
+        var reg=/^[\da-zA-Z]{8,12}$/;
+        test.call(this,reg);
+    }
+</script>
+</body>
+</html>

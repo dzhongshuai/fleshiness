@@ -1,0 +1,21 @@
+img{
+    tansition:2s;
+}
+img:hover{
+    transform: scale(1.1);
+}
+.media-body>a{
+    color:#000;
+    text-decoration: none;
+}
+.media-body>a:hover{
+    color:#a0c51f;
+}
+@keyframes change{
+    0%{transform: translateX(10rem);}
+    50%{transform: translateX(-5rem)}
+    100%{transform: translateX(1rem)}
+}
+.media{
+    animation: change 2s;
+}

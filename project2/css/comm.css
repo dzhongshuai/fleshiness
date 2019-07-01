@@ -1,0 +1,32 @@
+body{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.my_header{
+    width: 100%;
+}
+@media screen and (min-width: 992px){
+    .my_header{
+        height: 7.4rem;
+    }
+}
+@media screen and (min-width: 768px)and (max-width: 991px){
+    .my_header{
+        height: 5rem;
+    }
+}
+@media screen and (max-width: 767px){
+    .my_header{
+        height: 8rem;
+    }
+}
+a{
+    text-decoration: none;
+}
+.small{
+    font-size: 12px;
+}
+.my_gray{
+    color: rgba(49, 56, 48, 0.63);
+}

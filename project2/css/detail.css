@@ -1,0 +1,13 @@
+p::selection {
+    background: #61523f;
+    color: #fff;
+    text-shadow: none;
+}
+p{    text-indent: 2rem;}
+.my_green{
+    background:#a0c51f;
+    color:#fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}

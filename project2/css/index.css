@@ -1,0 +1,81 @@
+@media screen and (max-width: 991px) and (min-width: 768px){
+    #left{
+        display: none;
+    }
+    #middle .media{
+        height: 10rem;
+    }
+}
+@media screen and (max-width:  767px){
+    #right,#left{
+        display: none;
+    }
+}
+.media>div>div>div{
+     width:4rem;height:1.5rem;
+     line-height: 1.5rem;
+     font-size: 0.6rem;
+     text-align: center;
+     background-color: rgba(0,0,0,0.2);
+ }
+.media>div>div>div:hover{
+    background-color: rgba(255,0,0,0.3);
+}
+
+#middle img{
+    tansition:2s;
+    width:35%;
+}
+#middle img:hover{
+    transform: scale(1.1);
+}
+#middle a{
+    text-decoration: none;
+}
+.media-body>a{
+    color:#000;
+}
+.media-body>a:hover{
+    color:#a0c51f;
+}
+#right>div{
+    width: 90%;
+    margin: 0 auto;
+}
+#right div:first-child{
+    position: relative;
+}
+#advertising{
+    width:8%;
+    position: absolute;
+    top:0;left:0;
+    background-color: rgba(0,0,0,0.5);
+    color: #ffffff;
+    font-size: 0.5rem;
+}
+.carousel,.carousel img{
+    width: 90%;
+}
+
+#right .media>img{
+    width: 35%;
+}
+#right>div:nth-child(2) {
+    font-size: 0.8rem;
+}
+#up_top{
+    height:4rem;width: 4rem;
+    position:fixed;
+    left:3rem;bottom:5rem;
+    background-color:#a0c51f;
+    opacity: 0.4;
+    text-decoration: none;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+#up_top:hover{
+    opacity: 0.8;
+}
